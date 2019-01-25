@@ -61,6 +61,17 @@ struct Data {
         
         return  returnValue
     }
+    
+    func passwordCheck(_ password: String) -> Bool {
+        
+        var returnValue = true
+        
+        if password.isEmpty {
+            returnValue = false
+        }
+        
+        return returnValue
+    }
 }
 
 extension String {

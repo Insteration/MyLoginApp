@@ -21,9 +21,17 @@ class LoginViewController: UIViewController {
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion:nil)
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil)
         {nc in self.view.frame.origin.y = +200}
         
@@ -39,12 +47,20 @@ class LoginViewController: UIViewController {
     @IBAction func enterHomeButton(_ sender: UIButton) {
         
         let isEmailAddressValid = data.emailAddressCheck(userTextField[0].text!)
+        let isPasswordValid = data.passwordCheck(userTextField[1].text!)
         
         if isEmailAddressValid {
             print("Email ok!")
         } else {
             print("Email not ok")
             displayAlertMessage(messageToDisplay: "Email address is not valid")
+        }
+        
+        if isPasswordValid {
+            print("Password ok!")
+        } else {
+            print("Password not ok")
+            displayAlertMessage(messageToDisplay: "Enter password!")
         }
         
         if data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
