@@ -9,6 +9,7 @@
 import Foundation
 
 struct Data {
+    
     var dataStorage: [String: String] = ["inste@icloud.com": "123456", "inste@me.com": "112233", "admin": "admin"]
     
     func searchForAMatchInTheVault(_ emailData: String, _ passwordData: String) -> Bool {
