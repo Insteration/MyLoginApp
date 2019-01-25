@@ -28,15 +28,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func enterHomeButton(_ sender: UIButton) {
         
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        homeViewController.data = data
+        self.present(homeViewController, animated: true, completion: nil)
+        
         _ = data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!)
         _ = data.checkOnCorrectPassword(userTextField[0].text!, userTextField[1].text!)
     }
     
-    
-    @IBAction func registerAccountButton(_ sender: UIButton) {
-        
-        
-    }
 }
 
 extension LoginViewController: UITextFieldDelegate {

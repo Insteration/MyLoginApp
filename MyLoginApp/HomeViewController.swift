@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var data: Data?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

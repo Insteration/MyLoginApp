@@ -47,7 +47,6 @@
                                 <rect key="frame" x="51" y="396" width="273" height="30"/>
                                 <state key="normal" title="Click here"/>
                                 <connections>
-                                    <action selector="registerAccountButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zny-yh-Pld"/>
                                     <segue destination="6Kt-kh-zIo" kind="show" id="YPw-UD-0kx"/>
                                 </connections>
                             </button>
@@ -92,7 +91,7 @@
         <!--Home View Controller-->
         <scene sceneID="wE7-5x-yWm">
             <objects>
-                <viewController id="HtH-UC-guT" customClass="HomeViewController" customModule="MyLoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" id="HtH-UC-guT" customClass="HomeViewController" customModule="MyLoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Svu-tE-eAn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
