@@ -28,13 +28,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func enterHomeButton(_ sender: UIButton) {
         
+        if data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
+        
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
         homeViewController.data = data
         self.present(homeViewController, animated: true, completion: nil)
-        
-        _ = data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!)
-        _ = data.checkOnCorrectPassword(userTextField[0].text!, userTextField[1].text!)
+    
+        }
+
     }
     
 }
@@ -47,12 +49,7 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-//        let b = String.matches("^[a-zA-Z0-9._-]{1,30}$")
-//        print(b)
-    }
+
 }
 
 

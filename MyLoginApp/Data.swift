@@ -40,3 +40,10 @@ extension String {
         return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
     }
 }
+
+//
+//func textFieldDidEndEditing(_ textField: UITextField) {
+//
+//    //        let b = String.matches("^[a-zA-Z0-9._-]{1,30}$")
+//    //        print(b)
+//}

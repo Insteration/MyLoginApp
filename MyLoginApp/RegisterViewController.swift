@@ -9,6 +9,8 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    
+    var data: Data?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet var userTextField: [UITextField]!
     
     @IBAction func registerButton(_ sender: UIButton) {
+        
+        
         
     }
     /*
