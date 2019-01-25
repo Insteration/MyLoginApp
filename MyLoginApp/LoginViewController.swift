@@ -11,6 +11,16 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var data = Data()
+    
+    func displayAlertMessage(messageToDisplay: String) {
+        let alertController = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+            // Code in this block will trigger when OK button tapped.
+            print("Ok button tapped");
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion:nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +38,16 @@ class LoginViewController: UIViewController {
     
     @IBAction func enterHomeButton(_ sender: UIButton) {
         
-        if data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
+        let isEmailAddressValid = data.emailAddressCheck(userTextField[0].text!)
         
+        if isEmailAddressValid {
+            print("Email ok!")
+        } else {
+            print("Email not ok")
+            displayAlertMessage(messageToDisplay: "Email address is not valid")
+        }
+        
+        if data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
         homeViewController.data = data

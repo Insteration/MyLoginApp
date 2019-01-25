@@ -121,7 +121,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdd-Dz-gNi">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdd-Dz-gNi">
                                 <rect key="frame" x="170" y="318" width="35" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -131,12 +131,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PP9-wQ-Tv9" firstAttribute="trailing" secondItem="Bdd-Dz-gNi" secondAttribute="trailing" constant="170" id="RS2-79-KxM"/>
-                            <constraint firstItem="FhJ-KS-Hbh" firstAttribute="top" secondItem="PP9-wQ-Tv9" secondAttribute="top" constant="150" id="SZn-xB-Uus"/>
-                            <constraint firstItem="FhJ-KS-Hbh" firstAttribute="leading" secondItem="PP9-wQ-Tv9" secondAttribute="leading" constant="132" id="f9P-pz-arV"/>
-                            <constraint firstItem="PP9-wQ-Tv9" firstAttribute="trailing" secondItem="FhJ-KS-Hbh" secondAttribute="trailing" constant="132" id="h28-Ll-9O8"/>
-                            <constraint firstItem="Bdd-Dz-gNi" firstAttribute="top" secondItem="FhJ-KS-Hbh" secondAttribute="bottom" constant="127" id="q7o-Mw-guz"/>
-                            <constraint firstItem="Bdd-Dz-gNi" firstAttribute="leading" secondItem="PP9-wQ-Tv9" secondAttribute="leading" constant="170" id="ysT-gG-XuG"/>
+                            <constraint firstItem="PP9-wQ-Tv9" firstAttribute="bottom" secondItem="Bdd-Dz-gNi" secondAttribute="bottom" constant="319" id="0Gs-gB-aVM"/>
+                            <constraint firstItem="FhJ-KS-Hbh" firstAttribute="centerX" secondItem="Svu-tE-eAn" secondAttribute="centerX" id="9QR-Tf-qth"/>
+                            <constraint firstItem="Bdd-Dz-gNi" firstAttribute="centerY" secondItem="Svu-tE-eAn" secondAttribute="centerY" id="IPR-Xp-9sR"/>
+                            <constraint firstItem="FhJ-KS-Hbh" firstAttribute="centerX" secondItem="Bdd-Dz-gNi" secondAttribute="centerX" id="WZt-9X-3Qk"/>
+                            <constraint firstItem="FhJ-KS-Hbh" firstAttribute="top" secondItem="PP9-wQ-Tv9" secondAttribute="top" constant="150" id="cRa-f8-z0Q"/>
+                            <constraint firstItem="Bdd-Dz-gNi" firstAttribute="leading" secondItem="PP9-wQ-Tv9" secondAttribute="leading" constant="170" id="gyY-Sd-nOV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PP9-wQ-Tv9"/>
                     </view>

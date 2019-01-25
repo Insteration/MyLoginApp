@@ -12,8 +12,7 @@ class RegisterViewController: UIViewController {
     
     var data = Data()
     
-    func displayAlertMessage(messageToDisplay: String)
-    {
+    func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
             // Code in this block will trigger when OK button tapped.
@@ -35,7 +34,6 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButton(_ sender: UIButton) {
         
-//        let providedEmailAddress = userTextField[0].text
         let isEmailAddressValid = data.emailAddressCheck(userTextField[0].text!)
         
         if isEmailAddressValid {
