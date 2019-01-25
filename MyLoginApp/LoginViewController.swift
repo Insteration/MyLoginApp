@@ -50,9 +50,9 @@ class LoginViewController: UIViewController {
         let isPasswordCorrent = data.checkPasswordForCorrectInput(userTextField[1].text!)
         
         if isEmailAddressValid {
-            print("Email ok!")
+            print("Email valid is ok!")
         } else {
-            print("Email not ok")
+            print("Email not valid")
             displayAlertMessage(messageToDisplay: "Email address is not valid")
         }
         
@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
         }
         
         if isPasswordCorrent {
-            print("Password ok!")
+            print("Password correct!")
         } else {
             print("Password contains errors")
             displayAlertMessage(messageToDisplay: "Password contains errors!")
