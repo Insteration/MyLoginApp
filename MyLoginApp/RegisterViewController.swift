@@ -15,7 +15,6 @@ class RegisterViewController: UIViewController {
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-            // Code in this block will trigger when OK button tapped.
             print("Ok button tapped");
         }
         alertController.addAction(OKAction)
@@ -45,7 +44,13 @@ class RegisterViewController: UIViewController {
         
         if isEmailAddressValid {
             print("Email ok!")
+            if userTextField[1].text == userTextField[2].text {
             _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
+                displayAlertMessage(messageToDisplay: "Your account has been successfully registered, return to the main menu and log in with your account.")
+            } else {
+                print("Passwords do not match")
+                displayAlertMessage(messageToDisplay: "Passwords do not match, check the correctness of input")
+            }
         } else {
             print("Email not ok")
             displayAlertMessage(messageToDisplay: "Email address is not valid")

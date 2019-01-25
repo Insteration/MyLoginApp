@@ -27,11 +27,6 @@ struct Data {
         return false
     }
     
-    func checkOnCorrectPassword(_ emailData: String, _ passwordData: String) -> Bool {
-        
-        return true
-    }
-    
     mutating func registerAccount(_ emailData: String, _ passwordData: String) {
         dataStorage.updateValue(passwordData, forKey: emailData)
         
@@ -84,11 +79,5 @@ struct Data {
             }
         }
         return returnValue
-    }
-}
-
-extension String {
-    func matches(_ regex: String) -> Bool {
-        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
     }
 }
