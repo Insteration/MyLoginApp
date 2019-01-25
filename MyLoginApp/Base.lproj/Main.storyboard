@@ -89,6 +89,44 @@
             </objects>
             <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="wE7-5x-yWm">
+            <objects>
+                <viewController id="HtH-UC-guT" customClass="HomeViewController" customModule="MyLoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Svu-tE-eAn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success login!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhJ-KS-Hbh">
+                                <rect key="frame" x="132" y="170" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdd-Dz-gNi">
+                                <rect key="frame" x="170" y="318" width="35" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="HtH-UC-guT" eventType="touchUpInside" id="DG8-4X-zhR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PP9-wQ-Tv9" firstAttribute="trailing" secondItem="Bdd-Dz-gNi" secondAttribute="trailing" constant="170" id="RS2-79-KxM"/>
+                            <constraint firstItem="FhJ-KS-Hbh" firstAttribute="top" secondItem="PP9-wQ-Tv9" secondAttribute="top" constant="150" id="SZn-xB-Uus"/>
+                            <constraint firstItem="FhJ-KS-Hbh" firstAttribute="leading" secondItem="PP9-wQ-Tv9" secondAttribute="leading" constant="132" id="f9P-pz-arV"/>
+                            <constraint firstItem="PP9-wQ-Tv9" firstAttribute="trailing" secondItem="FhJ-KS-Hbh" secondAttribute="trailing" constant="132" id="h28-Ll-9O8"/>
+                            <constraint firstItem="Bdd-Dz-gNi" firstAttribute="top" secondItem="FhJ-KS-Hbh" secondAttribute="bottom" constant="127" id="q7o-Mw-guz"/>
+                            <constraint firstItem="Bdd-Dz-gNi" firstAttribute="leading" secondItem="PP9-wQ-Tv9" secondAttribute="leading" constant="170" id="ysT-gG-XuG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PP9-wQ-Tv9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G3i-pj-iYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1903" y="134"/>
+        </scene>
         <!--Register View Controller-->
         <scene sceneID="Ygr-xg-5DF">
             <objects>
