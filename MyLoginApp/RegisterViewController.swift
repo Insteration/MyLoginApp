@@ -22,8 +22,15 @@ class RegisterViewController: UIViewController {
         self.present(alertController, animated: true, completion:nil)
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         userTextField[0].delegate = self
         userTextField[1].delegate = self
@@ -38,12 +45,12 @@ class RegisterViewController: UIViewController {
         
         if isEmailAddressValid {
             print("Email ok!")
+            _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
         } else {
             print("Email not ok")
             displayAlertMessage(messageToDisplay: "Email address is not valid")
         }
         
-        _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
     }
     
     @IBAction func backButton(_ sender: UIButton) {

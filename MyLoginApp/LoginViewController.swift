@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
         
         let isEmailAddressValid = data.emailAddressCheck(userTextField[0].text!)
         let isPasswordValid = data.passwordCheck(userTextField[1].text!)
+        let isPasswordCorrent = data.checkPasswordForCorrectInput(userTextField[1].text!)
         
         if isEmailAddressValid {
             print("Email ok!")
@@ -57,18 +58,26 @@ class LoginViewController: UIViewController {
         }
         
         if isPasswordValid {
-            print("Password ok!")
+            print("Password valid is ok!")
         } else {
-            print("Password not ok")
-            displayAlertMessage(messageToDisplay: "Enter password!")
+            print("Password not valid")
+            displayAlertMessage(messageToDisplay: "Password is not filled!")
         }
         
+        if isPasswordCorrent {
+            print("Password ok!")
+        } else {
+            print("Password contains errors")
+            displayAlertMessage(messageToDisplay: "Password contains errors!")
+        }
+        
+        
         if data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
-        homeViewController.data = data
-        self.present(homeViewController, animated: true, completion: nil)
-    
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+            homeViewController.data = data
+            self.present(homeViewController, animated: true, completion: nil)
+            
         }
 
     }

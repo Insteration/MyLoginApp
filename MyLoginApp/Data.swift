@@ -67,9 +67,22 @@ struct Data {
         var returnValue = true
         
         if password.isEmpty {
+            print("Password field is empty!")
             returnValue = false
         }
+        return returnValue
+    }
+    
+    func checkPasswordForCorrectInput(_ password: String) -> Bool {
         
+        var returnValue = false
+        
+        for i in dataStorage {
+            if i.value == password {
+                print("Password entered correctly!")
+                returnValue = true
+            }
+        }
         return returnValue
     }
 }
