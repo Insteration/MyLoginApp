@@ -39,6 +39,9 @@ class LoginViewController: UIViewController {
 
     }
     
+    @IBAction func printDataButton(_ sender: UIButton) {
+        print(data.dataStorage)
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {

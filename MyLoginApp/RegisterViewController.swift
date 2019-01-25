@@ -10,29 +10,39 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    var data: Data?
-
+    var data = Data()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        userTextField[0].delegate = self
+        userTextField[1].delegate = self
     }
     
     @IBOutlet var userTextField: [UITextField]!
     
     @IBAction func registerButton(_ sender: UIButton) {
         
-        
+        _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backButton(_ sender: UIButton) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+        loginViewController.data = data
+        self.present(loginViewController, animated: true, completion: nil)
     }
-    */
+    
+    
+}
 
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userTextField[0] || textField == userTextField[1] {
+            self.userTextField[0].resignFirstResponder()
+            self.userTextField[1].resignFirstResponder()
+        }
+        return true
+    }
+    
 }

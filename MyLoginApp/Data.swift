@@ -32,7 +32,13 @@ struct Data {
         return true
     }
     
-    
+    mutating func registerAccount(_ emailData: String, _ passwordData: String) {
+        dataStorage.updateValue(emailData, forKey: passwordData)
+        
+        for i in dataStorage {
+            print("Login = \(i.key), password = \(i.value)")
+        }
+    }
 }
 
 extension String {
