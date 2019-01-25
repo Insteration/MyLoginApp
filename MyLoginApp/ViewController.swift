@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var data = Data()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,8 @@ class ViewController: UIViewController {
     
     @IBAction func enterHomeButton(_ sender: UIButton) {
         
-        
+        _ = data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!)
+        _ = data.checkOnCorrectPassword(userTextField[0].text!, userTextField[1].text!)
     }
     
     
@@ -44,10 +47,12 @@ extension ViewController: UITextFieldDelegate {
         }
         return true
     }
-}
-
-extension String {
-    func matchec(_ regex: String) -> Bool {
-        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+//        let b = String.matches("^[a-zA-Z0-9._-]{1,30}$")
+//        print(b)
     }
 }
+
+
