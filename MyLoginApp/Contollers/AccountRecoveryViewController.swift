@@ -60,21 +60,19 @@ class AccountRecoveryViewController: UIViewController {
 
 extension AccountRecoveryViewController: UITextFieldDelegate {
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if data.emailAddressCheck(emailTextField.text!) {
             self.emailTextField.layer.borderColor = UIColor.green.cgColor
             self.emailTextField.layer.borderWidth = 2
             self.emailTextField.layer.cornerRadius = 5
-            return true
         } else {
             self.emailTextField.layer.borderColor = UIColor.red.cgColor
             self.emailTextField.layer.borderWidth = 2
             self.emailTextField.layer.cornerRadius = 5
         }
-        return false
+        return true
     }
-    
+ 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
             self.emailTextField.resignFirstResponder()

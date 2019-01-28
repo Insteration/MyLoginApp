@@ -80,6 +80,7 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
         if data.emailAddressCheck(userTextField[0].text!) {
@@ -95,6 +96,7 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return false
     }
+
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
@@ -106,7 +108,6 @@ extension LoginViewController: UITextFieldDelegate {
             self.userTextField[1].layer.borderColor = UIColor.red.cgColor
             self.userTextField[1].layer.borderWidth = 2
             self.userTextField[1].layer.cornerRadius = 5
-            displayAlertMessage(messageToDisplay: dataMessage.passwordNotFilled)
         }
     }
 }
