@@ -13,9 +13,8 @@ class LoginViewController: UIViewController {
     var data = Data()
     
     func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Notifiction", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-            print("Ok button tapped");
         }
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion:nil)
@@ -70,7 +69,6 @@ class LoginViewController: UIViewController {
             displayAlertMessage(messageToDisplay: "Incorrect login or password!")
         }
         
-        
         if data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
@@ -79,10 +77,7 @@ class LoginViewController: UIViewController {
             
         }
     }
-    
-    @IBAction func printDataButton(_ sender: UIButton) {
-        print(data.dataStorage)
-    }
+
 }
 
 extension LoginViewController: UITextFieldDelegate {

@@ -43,6 +43,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D962375B21FF15BB008F0B40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D9772ADE21F9DD4700FBC0BB /* Data.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D962376021FF167F008F0B40 /* Contollers */ = {
+			isa = PBXGroup;
+			children = (
+				D9772ACE21F9D36B00FBC0BB /* LoginViewController.swift */,
+				D962375921FF123F008F0B40 /* AccountRecoveryViewController.swift */,
+				D962373921FB2209008F0B40 /* HomeViewController.swift */,
+				D962373721FB2121008F0B40 /* RegisterViewController.swift */,
+			);
+			path = Contollers;
+			sourceTree = "<group>";
+		};
+		D962376121FF169B008F0B40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9772AD021F9D36B00FBC0BB /* Main.storyboard */,
+				D9772AD521F9D36D00FBC0BB /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D962376221FF16AF008F0B40 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9772AD321F9D36D00FBC0BB /* Assets.xcassets */,
+				D9772AD821F9D36D00FBC0BB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D962376321FF16C5008F0B40 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D9772ACC21F9D36B00FBC0BB /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 		D9772AC021F9D36B00FBC0BB = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +107,11 @@
 		D9772ACB21F9D36B00FBC0BB /* MyLoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				D9772ACC21F9D36B00FBC0BB /* AppDelegate.swift */,
-				D9772ACE21F9D36B00FBC0BB /* LoginViewController.swift */,
-				D9772ADE21F9DD4700FBC0BB /* Data.swift */,
-				D9772AD021F9D36B00FBC0BB /* Main.storyboard */,
-				D962375921FF123F008F0B40 /* AccountRecoveryViewController.swift */,
-				D962373921FB2209008F0B40 /* HomeViewController.swift */,
-				D962373721FB2121008F0B40 /* RegisterViewController.swift */,
-				D9772AD321F9D36D00FBC0BB /* Assets.xcassets */,
-				D9772AD521F9D36D00FBC0BB /* LaunchScreen.storyboard */,
-				D9772AD821F9D36D00FBC0BB /* Info.plist */,
+				D962376321FF16C5008F0B40 /* AppDelegate */,
+				D962376021FF167F008F0B40 /* Contollers */,
+				D962375B21FF15BB008F0B40 /* Models */,
+				D962376221FF16AF008F0B40 /* Resources */,
+				D962376121FF169B008F0B40 /* Views */,
 			);
 			path = MyLoginApp;
 			sourceTree = "<group>";
@@ -300,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4FXKBHXYA;
-				INFOPLIST_FILE = MyLoginApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MyLoginApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4FXKBHXYA;
-				INFOPLIST_FILE = MyLoginApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MyLoginApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
