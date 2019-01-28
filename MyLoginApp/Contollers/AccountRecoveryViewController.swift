@@ -39,11 +39,15 @@ class AccountRecoveryViewController: UIViewController {
     
     @IBAction func resetPasswordButton(_ sender: UIButton) {
         
-        if data.searchEmailInData(emailTextField.text!) {
-            self.passwordLabel.text = data.outputPasswordFromData(emailTextField.text!)
-            self.passwordLabel.isHidden = false
+        if data.emailPasswordCheckOnEmpty(emailTextField.text!) {
+            if data.searchEmailInData(emailTextField.text!) {
+                self.passwordLabel.text = data.outputPasswordFromData(emailTextField.text!)
+                self.passwordLabel.isHidden = false
+            } else {
+                displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
+            }
         } else {
-            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
+            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFill)
         }
     }
     

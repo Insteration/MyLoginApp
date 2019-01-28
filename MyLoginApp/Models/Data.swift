@@ -94,8 +94,8 @@ struct Data {
         return true
     }
     
-    func passwordCheck(_ password: String) -> Bool {
-        if password.isEmpty {
+    func emailPasswordCheckOnEmpty(_ emailPassword: String) -> Bool {
+        if emailPassword.isEmpty {
             print("Password field is empty!")
             return false
         }
