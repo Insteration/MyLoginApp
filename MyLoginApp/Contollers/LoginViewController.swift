@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var data = Data()
+    var dataMessage = DataMessage()
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Notifiction", message: messageToDisplay, preferredStyle: .alert)
@@ -29,13 +30,7 @@ class LoginViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
-//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil)
-//        {nc in self.view.frame.origin.y = +200}
-//        
-//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil)
-//        {nc in self.view.frame.origin.y = 0}
-        
+ 
         userTextField[0].delegate = self
         userTextField[1].delegate = self
     }
@@ -43,30 +38,11 @@ class LoginViewController: UIViewController {
     @IBOutlet var userTextField: [UITextField]!
     
     @IBAction func enterHomeButton(_ sender: UIButton) {
-        
-        let isEmailAddressValid = data.emailAddressCheck(userTextField[0].text!)
-        let isPasswordValid = data.passwordCheck(userTextField[1].text!)
+
         let isPasswordCorrent = data.checkPasswordForCorrectInput(userTextField[1].text!)
-        
-        if isEmailAddressValid {
-            print("Email valid is ok!")
-        } else {
-            print("Email not valid")
-            displayAlertMessage(messageToDisplay: "Email address is not valid!")
-        }
-        
-        if isPasswordValid {
-            print("Password valid is ok!")
-        } else {
-            print("Password not valid")
-            displayAlertMessage(messageToDisplay: "Password is not filled!")
-        }
-        
-        if isPasswordCorrent {
-            print("Password correct!")
-        } else {
-            print("Password contains errors")
-            displayAlertMessage(messageToDisplay: "Incorrect login or password!")
+
+        if isPasswordCorrent != true {
+            displayAlertMessage(messageToDisplay: dataMessage.incorretLoginOrPassword)
         }
         
         if data.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
@@ -74,7 +50,6 @@ class LoginViewController: UIViewController {
             let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
             homeViewController.data = data
             self.present(homeViewController, animated: true, completion: nil)
-            
         }
     }
     
@@ -115,8 +90,8 @@ extension LoginViewController: UITextFieldDelegate {
             self.userTextField[0].layer.borderColor = UIColor.red.cgColor
             self.userTextField[0].layer.borderWidth = 2
             self.userTextField[0].layer.cornerRadius = 5
+            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotValid)
         }
-        
         return false
     }
     
@@ -130,6 +105,7 @@ extension LoginViewController: UITextFieldDelegate {
             self.userTextField[1].layer.borderColor = UIColor.red.cgColor
             self.userTextField[1].layer.borderWidth = 2
             self.userTextField[1].layer.cornerRadius = 5
+            displayAlertMessage(messageToDisplay: dataMessage.passwordNotFilled)
         }
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     var data = Data()
+    var dataMessage = DataMessage()
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Notification", message: messageToDisplay, preferredStyle: .alert)
@@ -39,22 +40,15 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButton(_ sender: UIButton) {
         
-        let isEmailAddressValid = data.emailAddressCheck(userTextField[0].text!)
-
-        if isEmailAddressValid {
-            print("Email ok!")
-            
-            
+        if data.emailAddressCheck(userTextField[0].text!) {
             if userTextField[1].text == userTextField[2].text {
             _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
-                displayAlertMessage(messageToDisplay: "Your account has been successfully registered, return to the main menu and log in with your account.")
+                displayAlertMessage(messageToDisplay: dataMessage.createAccountSuccesfull)
             } else {
-                print("Passwords do not match")
-                displayAlertMessage(messageToDisplay: "Passwords do not match, check the correctness of input")
+                displayAlertMessage(messageToDisplay: dataMessage.passwordNotMatch)
             }
         } else {
-            print("Email not ok")
-            displayAlertMessage(messageToDisplay: "Email address is not valid!")
+            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotValid)
         }
         
     }

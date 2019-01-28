@@ -11,6 +11,7 @@ import UIKit
 class AccountRecoveryViewController: UIViewController {
     
     var data = Data()
+    var dataMessage = DataMessage()
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Notifiction", message: messageToDisplay, preferredStyle: .alert)
@@ -41,10 +42,8 @@ class AccountRecoveryViewController: UIViewController {
         if data.searchEmailInData(emailTextField.text!) {
             self.passwordLabel.text = data.outputPasswordFromData(emailTextField.text!)
             self.passwordLabel.isHidden = false
-            
-            
         } else {
-            displayAlertMessage(messageToDisplay: "Email address not found in database!")
+            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
         }
     }
     
