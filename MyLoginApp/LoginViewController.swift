@@ -78,7 +78,6 @@ class LoginViewController: UIViewController {
             self.present(homeViewController, animated: true, completion: nil)
             
         }
-
     }
     
     @IBAction func printDataButton(_ sender: UIButton) {
@@ -87,13 +86,43 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userTextField[0] || textField == userTextField[1] {
             self.userTextField[0].resignFirstResponder()
             self.userTextField[1].resignFirstResponder()
         }
         return true
     }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if data.emailAddressCheck(userTextField[0].text!) {
+            self.userTextField[0].layer.borderColor = UIColor.green.cgColor
+            self.userTextField[0].layer.borderWidth = 2
+            self.userTextField[0].layer.cornerRadius = 5
+            return true
+        } else {
+            self.userTextField[0].layer.borderColor = UIColor.red.cgColor
+            self.userTextField[0].layer.borderWidth = 2
+            self.userTextField[0].layer.cornerRadius = 5
+        }
+        // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
+        return false //false keyboard not hide and not up in next window
+    }
+    
+//    public func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
+//
+//        let color = UIColor(red: 186/255, green: 186/255, blue: 186/255, alpha: 1.0).cgColor
+//
+//        if data.emailAddressCheck(userTextField[0].text!) {
+//            userTextField[0].layer.borderColor = color
+//            userTextField[0].layer.borderWidth = 0.5
+//            userTextField[0].layer.cornerRadius = 5
+//            return true
+//        }
+//        return false
+//    }
+//    func borderCheck()
 
 }
 

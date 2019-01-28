@@ -41,6 +41,15 @@ class RegisterViewController: UIViewController {
     @IBAction func registerButton(_ sender: UIButton) {
         
         let isEmailAddressValid = data.emailAddressCheck(userTextField[0].text!)
+        let isPasswordValid = data.passwordCheck(userTextField[1].text!)
+
+        
+//        if isPasswordValid {
+//            print("Password valid is ok!")
+//        } else {
+//            print("Password not valid")
+//            displayAlertMessage(messageToDisplay: "Password is not filled!")
+//        }
         
         if isEmailAddressValid {
             print("Email ok!")
