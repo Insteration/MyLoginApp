@@ -10,7 +10,7 @@ import Foundation
 
 struct Data {
     
-    var dataStorage: [String: String] = ["inste@icloud.com": "123456", "inste@me.com": "112233", "admin": "admin"]
+    var dataStorage: [String: String] = ["inste@icloud.com": "123456zaq", "inste@me.com": "112233abc", "admin@admin.net": "admin123"]
     
     func searchForAMatchInTheVault(_ emailData: String, _ passwordData: String) -> Bool {
         for search in dataStorage {
@@ -96,7 +96,6 @@ struct Data {
     
     func emailPasswordCheckOnEmpty(_ emailPassword: String) -> Bool {
         if emailPassword.isEmpty {
-            print("Password field is empty!")
             return false
         }
         return true
@@ -105,7 +104,6 @@ struct Data {
     func checkPasswordForCorrectInput(_ password: String) -> Bool {
         for i in dataStorage {
             if i.value == password {
-                print("Password entered correctly!")
                 return true
             }
         }

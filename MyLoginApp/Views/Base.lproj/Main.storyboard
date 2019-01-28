@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2g-ny-6j2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,7 +28,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAt-8q-tZH">
-                                <rect key="frame" x="51" y="319" width="273" height="30"/>
+                                <rect key="frame" x="51" y="318.5" width="273" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sL5-99-cIi"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waT-2s-9lK">
-                                <rect key="frame" x="51" y="236" width="273" height="75"/>
+                                <rect key="frame" x="51" y="236" width="273" height="74.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar4" translatesAutoresizingMaskIntoConstraints="NO" id="aJV-g1-Tzb">
-                                <rect key="frame" x="51" y="357" width="273" height="258"/>
+                                <rect key="frame" x="51" y="356.5" width="273" height="258"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="258" id="ERj-H6-kUm"/>
                                 </constraints>
@@ -112,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BK7-QW-6nV">
-                                <rect key="frame" x="51" y="184" width="273" height="30"/>
+                                <rect key="frame" x="51" y="140" width="273" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8qw-mj-fcF"/>
                                 </constraints>
@@ -121,7 +121,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYN-oz-Huy">
-                                <rect key="frame" x="51" y="222" width="273" height="30"/>
+                                <rect key="frame" x="51" y="178" width="273" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wJ8-3p-dn8"/>
                                 </constraints>
@@ -130,7 +130,7 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVK-97-eFe">
-                                <rect key="frame" x="51" y="260" width="273" height="30"/>
+                                <rect key="frame" x="51" y="216" width="273" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TwA-uO-HQh"/>
                                 </constraints>
@@ -140,7 +140,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sugar-Free-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bST-k7-2YH">
-                                <rect key="frame" x="137" y="76" width="101" height="100"/>
+                                <rect key="frame" x="137" y="32" width="101" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="2ds-u6-cLg"/>
                                 </constraints>
@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar2" translatesAutoresizingMaskIntoConstraints="NO" id="TBL-6V-vtq">
-                                <rect key="frame" x="16" y="298" width="343" height="317"/>
+                                <rect key="frame" x="16" y="254" width="343" height="361"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -345,24 +345,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ca0-f9-8Q7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2012" y="851"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="1CX-Kr-z46">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M2g-ny-6j2" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sto-HD-UHX">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GwP-pe-lO0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v4U-S3-mQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
