@@ -37,7 +37,6 @@ struct Data {
     
     func emailAddressCheck(_ emailAddress: String) -> Bool {
         
-        var returnValue = true
         let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
         
         do {
@@ -46,38 +45,51 @@ struct Data {
             let results = regularExpression.matches(in: emailAddress, range: NSRange(location: 0, length: nsString.length))
             
             if results.count == 0 {
-                returnValue = false
+                return false
             }
             
         } catch let error as NSError {
             print("invalid regular expression: \(error.localizedDescription)")
-            returnValue = false
+            return false
         }
+        return true
+    }
+    
+    func passwordCharacterCheck(_ userPassword: String) -> Bool {
         
-        return  returnValue
+        let passwordRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$"
+        
+        do {
+            let regularExpression = try NSRegularExpression(pattern: passwordRegEx)
+            let nsString = userPassword as NSString
+            let results = regularExpression.matches(in: userPassword, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0 {
+                return false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regular expression: \(error.localizedDescription)")
+            return false
+        }
+        return true
     }
     
     func passwordCheck(_ password: String) -> Bool {
-        
-        var returnValue = true
-        
         if password.isEmpty {
             print("Password field is empty!")
-            returnValue = false
+            return false
         }
-        return returnValue
+        return true
     }
     
     func checkPasswordForCorrectInput(_ password: String) -> Bool {
-        
-        var returnValue = false
-        
         for i in dataStorage {
             if i.value == password {
                 print("Password entered correctly!")
-                returnValue = true
+                return true
             }
         }
-        return returnValue
+        return false
     }
 }

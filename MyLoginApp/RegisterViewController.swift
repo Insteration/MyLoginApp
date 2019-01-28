@@ -13,9 +13,8 @@ class RegisterViewController: UIViewController {
     var data = Data()
     
     func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Notification", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-            print("Ok button tapped");
         }
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion:nil)
@@ -53,6 +52,8 @@ class RegisterViewController: UIViewController {
         
         if isEmailAddressValid {
             print("Email ok!")
+            
+            
             if userTextField[1].text == userTextField[2].text {
             _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
                 displayAlertMessage(messageToDisplay: "Your account has been successfully registered, return to the main menu and log in with your account.")
@@ -62,7 +63,7 @@ class RegisterViewController: UIViewController {
             }
         } else {
             print("Email not ok")
-            displayAlertMessage(messageToDisplay: "Email address is not valid")
+            displayAlertMessage(messageToDisplay: "Email address is not valid!")
         }
         
     }
@@ -78,6 +79,43 @@ class RegisterViewController: UIViewController {
 }
 
 extension RegisterViewController: UITextFieldDelegate {
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if data.emailAddressCheck(userTextField[0].text!) {
+            self.userTextField[0].layer.borderColor = UIColor.green.cgColor
+            self.userTextField[0].layer.borderWidth = 2
+            self.userTextField[0].layer.cornerRadius = 5
+        } else {
+            self.userTextField[0].layer.borderColor = UIColor.red.cgColor
+            self.userTextField[0].layer.borderWidth = 2
+            self.userTextField[0].layer.cornerRadius = 5
+        }
+        
+        if data.passwordCharacterCheck(userTextField[1].text!) {
+            self.userTextField[1].layer.borderColor = UIColor.green.cgColor
+            self.userTextField[1].layer.borderWidth = 2
+            self.userTextField[1].layer.cornerRadius = 5
+        } else {
+            self.userTextField[1].layer.borderColor = UIColor.red.cgColor
+            self.userTextField[1].layer.borderWidth = 2
+            self.userTextField[1].layer.cornerRadius = 5
+        }
+        
+        if data.passwordCharacterCheck(userTextField[2].text!) {
+            self.userTextField[2].layer.borderColor = UIColor.green.cgColor
+            self.userTextField[2].layer.borderWidth = 2
+            self.userTextField[2].layer.cornerRadius = 5
+        } else {
+            self.userTextField[2].layer.borderColor = UIColor.red.cgColor
+            self.userTextField[2].layer.borderWidth = 2
+            self.userTextField[2].layer.cornerRadius = 5
+        }
+        
+        return true
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userTextField[0] || textField == userTextField[1] || textField == userTextField[2] {
             self.userTextField[0].resignFirstResponder()

@@ -189,6 +189,12 @@
                                     <action selector="registerButton:" destination="6Kt-kh-zIo" eventType="touchUpInside" id="gxo-3L-aXy"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Account must consist of your email address.  Password need have minimum six characters, at least one letter and one number" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5k-fc-UTE">
+                                <rect key="frame" x="51" y="111" width="273" height="117"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -198,13 +204,17 @@
                             <constraint firstItem="TAW-iC-pt3" firstAttribute="top" secondItem="WfK-ST-ttO" secondAttribute="bottom" constant="8" symbolic="YES" id="AMI-62-Dc7"/>
                             <constraint firstItem="gXj-bA-EhQ" firstAttribute="trailing" secondItem="WfK-ST-ttO" secondAttribute="trailing" id="AxW-Fz-IcP"/>
                             <constraint firstItem="iu7-gh-ZBM" firstAttribute="top" secondItem="TAW-iC-pt3" secondAttribute="bottom" constant="8" symbolic="YES" id="N4T-UY-Chp"/>
+                            <constraint firstItem="gXj-bA-EhQ" firstAttribute="top" secondItem="y5k-fc-UTE" secondAttribute="bottom" constant="8" symbolic="YES" id="cpC-ls-r8c"/>
                             <constraint firstItem="iu7-gh-ZBM" firstAttribute="centerX" secondItem="c4n-2c-V6J" secondAttribute="centerX" id="dkK-u3-hnr"/>
                             <constraint firstItem="c4n-2c-V6J" firstAttribute="leading" secondItem="h2Z-5M-oo2" secondAttribute="leading" constant="170" id="e2T-JD-LdX"/>
+                            <constraint firstItem="y5k-fc-UTE" firstAttribute="trailing" secondItem="gXj-bA-EhQ" secondAttribute="trailing" id="g22-FU-I0x"/>
                             <constraint firstItem="WfK-ST-ttO" firstAttribute="leading" secondItem="TAW-iC-pt3" secondAttribute="leading" id="lnK-c4-HQj"/>
                             <constraint firstItem="TAW-iC-pt3" firstAttribute="leading" secondItem="iu7-gh-ZBM" secondAttribute="leading" id="njZ-zw-4SP"/>
                             <constraint firstItem="TAW-iC-pt3" firstAttribute="trailing" secondItem="iu7-gh-ZBM" secondAttribute="trailing" id="pDN-l3-odN"/>
+                            <constraint firstItem="y5k-fc-UTE" firstAttribute="leading" secondItem="gXj-bA-EhQ" secondAttribute="leading" id="rf6-ta-V1X"/>
                             <constraint firstItem="WfK-ST-ttO" firstAttribute="trailing" secondItem="TAW-iC-pt3" secondAttribute="trailing" id="svp-DL-gVx"/>
                             <constraint firstItem="gXj-bA-EhQ" firstAttribute="top" secondItem="h2Z-5M-oo2" secondAttribute="top" constant="216" id="tyc-18-Waw"/>
+                            <constraint firstItem="y5k-fc-UTE" firstAttribute="top" secondItem="h2Z-5M-oo2" secondAttribute="top" constant="91" id="wgj-IL-zV5"/>
                             <constraint firstItem="WfK-ST-ttO" firstAttribute="top" secondItem="gXj-bA-EhQ" secondAttribute="bottom" constant="8" symbolic="YES" id="ycC-2j-ml3"/>
                             <constraint firstItem="gXj-bA-EhQ" firstAttribute="leading" secondItem="WfK-ST-ttO" secondAttribute="leading" id="z81-bg-RRx"/>
                         </constraints>
@@ -218,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ca0-f9-8Q7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="906"/>
+            <point key="canvasLocation" x="1072.8" y="905.3973013493254"/>
         </scene>
     </scenes>
     <resources>

@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
             print("Email valid is ok!")
         } else {
             print("Email not valid")
-            displayAlertMessage(messageToDisplay: "Email address is not valid")
+            displayAlertMessage(messageToDisplay: "Email address is not valid!")
         }
         
         if isPasswordValid {
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
             print("Password correct!")
         } else {
             print("Password contains errors")
-            displayAlertMessage(messageToDisplay: "Password contains errors!")
+            displayAlertMessage(messageToDisplay: "Incorrect login or password!")
         }
         
         
@@ -100,14 +100,23 @@ extension LoginViewController: UITextFieldDelegate {
             self.userTextField[0].layer.borderColor = UIColor.green.cgColor
             self.userTextField[0].layer.borderWidth = 2
             self.userTextField[0].layer.cornerRadius = 5
-            return true
         } else {
             self.userTextField[0].layer.borderColor = UIColor.red.cgColor
             self.userTextField[0].layer.borderWidth = 2
             self.userTextField[0].layer.cornerRadius = 5
         }
-        // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
-        return false //false keyboard not hide and not up in next window
+        
+        if data.passwordCharacterCheck(userTextField[1].text!) {
+            self.userTextField[1].layer.borderColor = UIColor.green.cgColor
+            self.userTextField[1].layer.borderWidth = 2
+            self.userTextField[1].layer.cornerRadius = 5
+        } else {
+            self.userTextField[1].layer.borderColor = UIColor.red.cgColor
+            self.userTextField[1].layer.borderWidth = 2
+            self.userTextField[1].layer.cornerRadius = 5
+        }
+        
+        return true
     }
     
 //    public func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
