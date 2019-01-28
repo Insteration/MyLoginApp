@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
         userTextField[0].delegate = self
         userTextField[1].delegate = self
     }
-
+    
     @IBOutlet var userTextField: [UITextField]!
     
     @IBAction func enterHomeButton(_ sender: UIButton) {
@@ -100,11 +100,17 @@ extension LoginViewController: UITextFieldDelegate {
             self.userTextField[0].layer.borderColor = UIColor.green.cgColor
             self.userTextField[0].layer.borderWidth = 2
             self.userTextField[0].layer.cornerRadius = 5
+            return true
         } else {
             self.userTextField[0].layer.borderColor = UIColor.red.cgColor
             self.userTextField[0].layer.borderWidth = 2
             self.userTextField[0].layer.cornerRadius = 5
         }
+        
+        return false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
         if data.passwordCharacterCheck(userTextField[1].text!) {
             self.userTextField[1].layer.borderColor = UIColor.green.cgColor
@@ -115,24 +121,7 @@ extension LoginViewController: UITextFieldDelegate {
             self.userTextField[1].layer.borderWidth = 2
             self.userTextField[1].layer.cornerRadius = 5
         }
-        
-        return true
     }
-    
-//    public func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
-//
-//        let color = UIColor(red: 186/255, green: 186/255, blue: 186/255, alpha: 1.0).cgColor
-//
-//        if data.emailAddressCheck(userTextField[0].text!) {
-//            userTextField[0].layer.borderColor = color
-//            userTextField[0].layer.borderWidth = 0.5
-//            userTextField[0].layer.cornerRadius = 5
-//            return true
-//        }
-//        return false
-//    }
-//    func borderCheck()
-
 }
 
 

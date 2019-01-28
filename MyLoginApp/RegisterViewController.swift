@@ -40,16 +40,7 @@ class RegisterViewController: UIViewController {
     @IBAction func registerButton(_ sender: UIButton) {
         
         let isEmailAddressValid = data.emailAddressCheck(userTextField[0].text!)
-        let isPasswordValid = data.passwordCheck(userTextField[1].text!)
 
-        
-//        if isPasswordValid {
-//            print("Password valid is ok!")
-//        } else {
-//            print("Password not valid")
-//            displayAlertMessage(messageToDisplay: "Password is not filled!")
-//        }
-        
         if isEmailAddressValid {
             print("Email ok!")
             
@@ -80,8 +71,7 @@ class RegisterViewController: UIViewController {
 
 extension RegisterViewController: UITextFieldDelegate {
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
+    func textFieldDidEndEditing(_ textField: UITextField) {
         if data.emailAddressCheck(userTextField[0].text!) {
             self.userTextField[0].layer.borderColor = UIColor.green.cgColor
             self.userTextField[0].layer.borderWidth = 2
@@ -111,10 +101,8 @@ extension RegisterViewController: UITextFieldDelegate {
             self.userTextField[2].layer.borderWidth = 2
             self.userTextField[2].layer.cornerRadius = 5
         }
-        
-        return true
     }
-    
+ 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userTextField[0] || textField == userTextField[1] || textField == userTextField[2] {
