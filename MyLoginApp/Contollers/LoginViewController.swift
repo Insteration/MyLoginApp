@@ -30,11 +30,11 @@ class LoginViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil)
-        {nc in self.view.frame.origin.y = +200}
-        
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil)
-        {nc in self.view.frame.origin.y = 0}
+//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil)
+//        {nc in self.view.frame.origin.y = +200}
+//        
+//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil)
+//        {nc in self.view.frame.origin.y = 0}
         
         userTextField[0].delegate = self
         userTextField[1].delegate = self
