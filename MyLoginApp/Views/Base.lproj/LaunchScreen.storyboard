@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,16 +15,19 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchsugar" translatesAutoresizingMaskIntoConstraints="NO" id="9H6-fj-DXg">
-                                <rect key="frame" x="16" y="20" width="343" height="598"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mY-Zs-Q5U">
-                                <rect key="frame" x="166" y="626" width="39" height="21"/>
+                                <rect key="frame" x="16" y="20" width="288" height="499"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ocH-kA-uEh"/>
+                                    <constraint firstAttribute="width" secondItem="9H6-fj-DXg" secondAttribute="height" multiplier="288:499" id="4Ec-vv-a97"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mY-Zs-Q5U">
+                                <rect key="frame" x="16" y="527" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8mY-Zs-Q5U" secondAttribute="height" multiplier="96:7" id="AYt-Di-cPl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -33,19 +36,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8mY-Zs-Q5U" secondAttribute="trailing" constant="16" id="5mR-a3-KX2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8mY-Zs-Q5U" secondAttribute="bottom" constant="20" id="82T-1i-oFF"/>
+                            <constraint firstItem="9H6-fj-DXg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="84N-7t-N8x"/>
                             <constraint firstItem="9H6-fj-DXg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="A1r-cO-hx7"/>
-                            <constraint firstItem="8mY-Zs-Q5U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="I6w-C6-qf3"/>
-                            <constraint firstItem="8mY-Zs-Q5U" firstAttribute="top" secondItem="9H6-fj-DXg" secondAttribute="bottom" constant="8" symbolic="YES" id="Q2L-jc-rW4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9H6-fj-DXg" secondAttribute="trailing" constant="16" id="Dnz-gL-4AY"/>
+                            <constraint firstItem="8mY-Zs-Q5U" firstAttribute="top" secondItem="9H6-fj-DXg" secondAttribute="bottom" constant="8" id="GPx-rf-RFM"/>
                             <constraint firstItem="9H6-fj-DXg" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="SxB-eU-MbS"/>
+                            <constraint firstItem="8mY-Zs-Q5U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WX2-qC-iiM"/>
                             <constraint firstItem="9H6-fj-DXg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Y6Q-Jq-AaT"/>
-                            <constraint firstAttribute="bottom" secondItem="8mY-Zs-Q5U" secondAttribute="bottom" constant="20" symbolic="YES" id="zZb-K5-5rS"/>
+                            <constraint firstItem="9H6-fj-DXg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uIM-Ut-r3u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.625" y="373.94366197183098"/>
         </scene>
     </scenes>
     <resources>

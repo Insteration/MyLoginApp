@@ -56,7 +56,6 @@ class AccountRecoveryViewController: UIViewController {
         loginViewController.data = data
         self.present(loginViewController, animated: true, completion: nil)
     }
-    
 }
 
 extension AccountRecoveryViewController: UITextFieldDelegate {
