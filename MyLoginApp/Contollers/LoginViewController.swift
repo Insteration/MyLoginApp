@@ -85,7 +85,14 @@ class LoginViewController: UIViewController {
         self.present(accountRecoveryViewController, animated: true, completion: nil)
     }
     
-
+    
+    @IBAction func registerViewControllerButton(_ sender: UIButton) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let registerViewContoller = storyboard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
+        registerViewContoller.data = data
+        self.present(registerViewContoller, animated: true, completion: nil)
+    }
+    
 }
 
 extension LoginViewController: UITextFieldDelegate {
