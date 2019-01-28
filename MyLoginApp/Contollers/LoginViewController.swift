@@ -50,6 +50,8 @@ class LoginViewController: UIViewController {
             let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
             homeViewController.data = data
             self.present(homeViewController, animated: true, completion: nil)
+        } else {
+            displayAlertMessage(messageToDisplay: dataMessage.incorretLoginOrPassword)
         }
     }
     

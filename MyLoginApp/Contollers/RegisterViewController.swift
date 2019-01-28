@@ -41,16 +41,19 @@ class RegisterViewController: UIViewController {
     @IBAction func registerButton(_ sender: UIButton) {
         
         if data.emailAddressCheck(userTextField[0].text!) {
-            if userTextField[1].text == userTextField[2].text {
-            _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
-                displayAlertMessage(messageToDisplay: dataMessage.createAccountSuccesfull)
+            if data.passwordCharacterCheck(userTextField[1].text!) {
+                if userTextField[1].text == userTextField[2].text {
+                    _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
+                    displayAlertMessage(messageToDisplay: dataMessage.createAccountSuccesfull)
+                } else {
+                    displayAlertMessage(messageToDisplay: dataMessage.passwordNotMatch)
+                }
             } else {
-                displayAlertMessage(messageToDisplay: dataMessage.passwordNotMatch)
+                displayAlertMessage(messageToDisplay: dataMessage.passwordNotFilled)
             }
         } else {
             displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotValid)
         }
-        
     }
     
     @IBAction func backButton(_ sender: UIButton) {
@@ -59,8 +62,6 @@ class RegisterViewController: UIViewController {
         loginViewController.data = data
         self.present(loginViewController, animated: true, completion: nil)
     }
-    
-    
 }
 
 extension RegisterViewController: UITextFieldDelegate {
@@ -96,7 +97,6 @@ extension RegisterViewController: UITextFieldDelegate {
             self.userTextField[2].layer.cornerRadius = 5
         }
     }
- 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userTextField[0] || textField == userTextField[1] || textField == userTextField[2] {

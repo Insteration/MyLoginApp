@@ -15,7 +15,6 @@ struct Data {
     func searchForAMatchInTheVault(_ emailData: String, _ passwordData: String) -> Bool {
         for search in dataStorage {
             if search.key == emailData {
-                print("Found email login in DataStorage! Matching a value by key!")
                 if search.value == passwordData {
                     print("Login = \(search.key), password = \(search.value)")
                     print("Success!")
