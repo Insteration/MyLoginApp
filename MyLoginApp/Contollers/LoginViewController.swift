@@ -77,11 +77,19 @@ class LoginViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func accountRecoveryButton(_ sender: UIButton) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let accountRecoveryViewController = storyboard.instantiateViewController(withIdentifier: "recoveryVC") as! AccountRecoveryViewController
+        accountRecoveryViewController.data = data
+        self.present(accountRecoveryViewController, animated: true, completion: nil)
+    }
+    
 
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userTextField[0] || textField == userTextField[1] {
             self.userTextField[0].resignFirstResponder()
             self.userTextField[1].resignFirstResponder()

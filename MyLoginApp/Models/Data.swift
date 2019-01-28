@@ -27,6 +27,26 @@ struct Data {
         return false
     }
     
+    func searchEmailInData(_ emailData: String) -> Bool {
+        
+        for search in dataStorage {
+            if search.key == emailData {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func outputPasswordFromData(_ emailData: String) -> String {
+        for search in dataStorage {
+            if search.key == emailData {
+                return search.value
+            }
+        }
+        
+        return "Not found password"
+    }
+    
     mutating func registerAccount(_ emailData: String, _ passwordData: String) {
         dataStorage.updateValue(passwordData, forKey: emailData)
         
