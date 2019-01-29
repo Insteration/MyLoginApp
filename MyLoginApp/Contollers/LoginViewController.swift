@@ -18,9 +18,31 @@ class LoginViewController: UIViewController {
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Notifiction", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in }
-        //        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {(action:UIAlertAction!) in }
         alertController.addAction(OKAction)
-        //        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion:nil)
+    }
+    
+    func displayAlertRegistrationMessage(messageToDisplay: String) {
+        let alertController = UIAlertController(title: "Warning", message: messageToDisplay, preferredStyle: .alert)
+        let registerAction = UIAlertAction(title: "Register", style: .default) { (action:UIAlertAction!) in
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let registerViewContoller = storyboard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
+            registerViewContoller.data = self.data
+            self.present(registerViewContoller, animated: true, completion: nil)
+        }
+        
+        let recoverAction = UIAlertAction(title: "Recovery", style: .default) {(action:UIAlertAction!) in
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let accountRecoveryViewController = storyboard.instantiateViewController(withIdentifier: "recoveryVC") as! AccountRecoveryViewController
+            accountRecoveryViewController.data = self.data
+            self.present(accountRecoveryViewController, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {(action:UIAlertAction!) in }
+        
+        alertController.addAction(registerAction)
+        alertController.addAction(recoverAction)
+        alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:nil)
     }
     
@@ -42,19 +64,19 @@ class LoginViewController: UIViewController {
         
         userTextField[0].delegate = self
         userTextField[1].delegate = self
-        userTextField[0].tag = 0
-        userTextField[1].tag = 1
+
     }
     
     @IBOutlet var userTextField: [UITextField]!
     
     @IBAction func enterHomeButton(_ sender: UIButton) {
         
-        let isPasswordCorrent = dataMethods.checkPasswordForCorrectInput(userTextField[1].text!)
-        
-        if isPasswordCorrent != true {
-            displayAlertMessage(messageToDisplay: dataMessage.incorretLoginOrPassword)
-        }
+        //        let isPasswordCorrent = dataMethods.checkPasswordForCorrectInput(userTextField[1].text!)
+        //
+        //        if isPasswordCorrent != true {
+        //
+        //            displayAlertMessage(messageToDisplay: dataMessage.dataNilMessage)
+        //        }
         
         if dataMethods.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -62,7 +84,12 @@ class LoginViewController: UIViewController {
             homeViewController.data = data
             self.present(homeViewController, animated: true, completion: nil)
         } else {
-            displayAlertMessage(messageToDisplay: dataMessage.incorretLoginOrPassword)
+            data.userPushCount += 1
+            if data.userPushCount >= 3 {
+                displayAlertRegistrationMessage(messageToDisplay: dataMessage.registerRecoverAlert)
+            } else {
+                displayAlertMessage(messageToDisplay: dataMessage.incorretLoginOrPassword)
+            }
         }
     }
     
@@ -86,92 +113,65 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UITextFieldDelegate {
     
     func performAction() {
-        
         if dataMethods.searchForAMatchInTheVault(userTextField[0].text!, userTextField[1].text!) == true {
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
             homeViewController.data = data
             self.present(homeViewController, animated: true, completion: nil)
         } else {
-            data.count += 1
-
-            displayAlertMessage(messageToDisplay: dataMessage.incorretLoginOrPassword)
-            if data.count >= 2 {
-                print("REGISTER REGISTER REGISTER!!!!")
+            data.userPushCount += 1
+            if data.userPushCount >= 3 {
+                displayAlertRegistrationMessage(messageToDisplay: dataMessage.registerRecoverAlert)
+            } else {
+                displayAlertMessage(messageToDisplay: dataMessage.incorretLoginOrPassword)
             }
         }
         
     }
     
     
-    //FIXME!
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        if let nextField = textField.superview?.viewWithTag(1) as? UITextField {
-            nextField.becomeFirstResponder()
+        if textField == userTextField[0] {
+            textField.resignFirstResponder()
+            userTextField[1].becomeFirstResponder()
+        } else if textField == userTextField[1] {
+            textField.resignFirstResponder()
             if dataMethods.emailPasswordCheckOnEmpty(userTextField[1].text!) {
                 performAction()
             }
-        } else {
-            textField.resignFirstResponder()
         }
-
         return false
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if dataMethods.emailAddressCheck(userTextField[0].text!) {
-            self.userTextField[0].layer.borderColor = UIColor.green.cgColor
-            self.userTextField[0].layer.borderWidth = 2
-            self.userTextField[0].layer.cornerRadius = 5
-        } else {
-            self.userTextField[0].layer.borderColor = UIColor.red.cgColor
-            self.userTextField[0].layer.borderWidth = 2
-            self.userTextField[0].layer.cornerRadius = 5
-        }
         
-        if dataMethods.passwordCharacterCheck(userTextField[1].text!) {
-            self.userTextField[1].layer.borderColor = UIColor.green.cgColor
-            self.userTextField[1].layer.borderWidth = 2
-            self.userTextField[1].layer.cornerRadius = 5
-        } else {
-            self.userTextField[1].layer.borderColor = UIColor.red.cgColor
-            self.userTextField[1].layer.borderWidth = 2
-            self.userTextField[1].layer.cornerRadius = 5
+        switch textField {
+        case userTextField[0]:
+            if dataMethods.emailAddressCheck(userTextField[0].text!) {
+                self.userTextField[0].layer.borderColor = UIColor.green.cgColor
+                self.userTextField[0].layer.borderWidth = 2
+                self.userTextField[0].layer.cornerRadius = 5
+            } else {
+                self.userTextField[0].layer.borderColor = UIColor.red.cgColor
+                self.userTextField[0].layer.borderWidth = 2
+                self.userTextField[0].layer.cornerRadius = 5
+            }
+        case userTextField[1]:
+            if dataMethods.passwordCharacterCheck(userTextField[1].text!) {
+                self.userTextField[1].layer.borderColor = UIColor.green.cgColor
+                self.userTextField[1].layer.borderWidth = 2
+                self.userTextField[1].layer.cornerRadius = 5
+            } else {
+                self.userTextField[1].layer.borderColor = UIColor.red.cgColor
+                self.userTextField[1].layer.borderWidth = 2
+                self.userTextField[1].layer.cornerRadius = 5
+            }
+        default:
+            ()
         }
-        
         return true
     }
-    
-    //    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-    
-    //        if data.emailAddressCheck(userTextField[0].text!) {
-    //            self.userTextField[0].layer.borderColor = UIColor.green.cgColor
-    //            self.userTextField[0].layer.borderWidth = 2
-    //            self.userTextField[0].layer.cornerRadius = 5
-    //            return true
-    //        } else {
-    //            self.userTextField[0].layer.borderColor = UIColor.red.cgColor
-    //            self.userTextField[0].layer.borderWidth = 2
-    //            self.userTextField[0].layer.cornerRadius = 5
-    //            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotValid)
-    //        }
-    //        return false
-    //    }
-    
-    
-    //    func textFieldDidEndEditing(_ textField: UITextField) {
-    //
-    //        if data.passwordCharacterCheck(userTextField[1].text!) {
-    //            self.userTextField[1].layer.borderColor = UIColor.green.cgColor
-    //            self.userTextField[1].layer.borderWidth = 2
-    //            self.userTextField[1].layer.cornerRadius = 5
-    //        } else {
-    //            self.userTextField[1].layer.borderColor = UIColor.red.cgColor
-    //            self.userTextField[1].layer.borderWidth = 2
-    //            self.userTextField[1].layer.cornerRadius = 5
-    //        }
-    //    }
 }
 
 
