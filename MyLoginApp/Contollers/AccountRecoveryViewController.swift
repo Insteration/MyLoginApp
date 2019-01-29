@@ -34,14 +34,12 @@ class AccountRecoveryViewController: UIViewController {
     }
     
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordLabel: UILabel!
     
     @IBAction func resetPasswordButton(_ sender: UIButton) {
         
         if data.emailPasswordCheckOnEmpty(emailTextField.text!) {
             if data.searchEmailInData(emailTextField.text!) {
-                self.passwordLabel.text = data.outputPasswordFromData(emailTextField.text!)
-                self.passwordLabel.isHidden = false
+                displayAlertMessage(messageToDisplay: data.outputPasswordFromData(emailTextField.text!))
             } else {
                 displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
             }
@@ -60,6 +58,18 @@ class AccountRecoveryViewController: UIViewController {
 
 extension AccountRecoveryViewController: UITextFieldDelegate {
     
+    func performAction() {
+        if data.emailPasswordCheckOnEmpty(emailTextField.text!) {
+            if data.searchEmailInData(emailTextField.text!) {
+                displayAlertMessage(messageToDisplay: data.outputPasswordFromData(emailTextField.text!))
+            } else {
+                displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
+            }
+        } else {
+            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFill)
+        }
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if data.emailAddressCheck(emailTextField.text!) {
             self.emailTextField.layer.borderColor = UIColor.green.cgColor
@@ -77,6 +87,7 @@ extension AccountRecoveryViewController: UITextFieldDelegate {
         if textField == emailTextField {
             self.emailTextField.resignFirstResponder()
         }
+        performAction()
         return true
     }
 }
