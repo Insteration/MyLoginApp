@@ -60,7 +60,7 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet var userTextField: [UITextField]!
     
-    fileprivate func registerAccount() {
+     func registerAccount() {
         if dataMethods.emailAddressCheck(userTextField[0].text!) {
             if dataMethods.passwordCharacterCheck(userTextField[1].text!) {
                 if userTextField[1].text == userTextField[2].text {
