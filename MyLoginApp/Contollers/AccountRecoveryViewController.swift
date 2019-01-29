@@ -14,14 +14,33 @@ class AccountRecoveryViewController: UIViewController {
     var dataMessage = DataMessage()
     var dataMethods = DataMethods()
     
-    func displayAlertMessage(messageToDisplay: String) {
+    fileprivate func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Notifiction", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in }
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion:nil)
     }
     
-    @objc func dismissKeyboard() {
+    fileprivate func resetPassword() {
+        if dataMethods.emailPasswordCheckOnEmpty(emailTextField.text!) {
+            if dataMethods.searchEmailInData(emailTextField.text!) {
+                displayAlertMessage(messageToDisplay: dataMessage.passwordRecovery + dataMethods.outputPasswordFromData(emailTextField.text!))
+            } else {
+                displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
+            }
+        } else {
+            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFill)
+        }
+    }
+    
+    fileprivate func backToLogin() {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+        loginViewController.data = data
+        self.present(loginViewController, animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func dismissKeyboard() {
         view.endEditing(true)
     }
     
@@ -32,7 +51,7 @@ class AccountRecoveryViewController: UIViewController {
         view.addGestureRecognizer(tap)
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil)
-        {nc in self.view.frame.origin.y = -40}
+        {nc in self.view.frame.origin.y = -30}
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil)
         {nc in self.view.frame.origin.y = 0}
@@ -44,39 +63,15 @@ class AccountRecoveryViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBAction func resetPasswordButton(_ sender: UIButton) {
-        
-        if dataMethods.emailPasswordCheckOnEmpty(emailTextField.text!) {
-            if dataMethods.searchEmailInData(emailTextField.text!) {
-                displayAlertMessage(messageToDisplay: dataMethods.outputPasswordFromData(emailTextField.text!))
-            } else {
-                displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
-            }
-        } else {
-            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFill)
-        }
+        resetPassword()
     }
     
     @IBAction func backToLoginViewControllerButton(_ sender: UIButton) {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
-        loginViewController.data = data
-        self.present(loginViewController, animated: true, completion: nil)
+        backToLogin()
     }
 }
 
 extension AccountRecoveryViewController: UITextFieldDelegate {
-    
-    func performAction() {
-        if dataMethods.emailPasswordCheckOnEmpty(emailTextField.text!) {
-            if dataMethods.searchEmailInData(emailTextField.text!) {
-                displayAlertMessage(messageToDisplay: "Your password is \(dataMethods.outputPasswordFromData(emailTextField.text!))")
-            } else {
-                displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
-            }
-        } else {
-            displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFill)
-        }
-    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if dataMethods.emailAddressCheck(emailTextField.text!) {
@@ -91,11 +86,12 @@ extension AccountRecoveryViewController: UITextFieldDelegate {
         return true
     }
  
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
         if textField == emailTextField {
-            self.emailTextField.resignFirstResponder()
+        textField.resignFirstResponder()
+        self.resetPassword()
         }
-        performAction()
-        return true
+        return false
     }
 }
