@@ -16,7 +16,9 @@ class LoginViewController: UIViewController {
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Notifiction", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {(action:UIAlertAction!) in }
         alertController.addAction(OKAction)
+//        alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:nil)
     }
     
@@ -29,6 +31,12 @@ class LoginViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil)
+        {nc in self.view.frame.origin.y = -85}
+
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil)
+        {nc in self.view.frame.origin.y = 0}
  
         userTextField[0].delegate = self
         userTextField[1].delegate = self

@@ -30,6 +30,13 @@ class AccountRecoveryViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil)
+        {nc in self.view.frame.origin.y = -40}
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil)
+        {nc in self.view.frame.origin.y = 0}
+        
+        
         emailTextField.delegate = self
     }
     
@@ -61,7 +68,7 @@ extension AccountRecoveryViewController: UITextFieldDelegate {
     func performAction() {
         if data.emailPasswordCheckOnEmpty(emailTextField.text!) {
             if data.searchEmailInData(emailTextField.text!) {
-                displayAlertMessage(messageToDisplay: data.outputPasswordFromData(emailTextField.text!))
+                displayAlertMessage(messageToDisplay: "Your password is \(data.outputPasswordFromData(emailTextField.text!))")
             } else {
                 displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
             }
