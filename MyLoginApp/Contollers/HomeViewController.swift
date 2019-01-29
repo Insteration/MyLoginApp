@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
 
     var data: Data?
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,4 +21,5 @@ class HomeViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
 }

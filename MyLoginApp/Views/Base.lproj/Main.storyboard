@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="recoveryVC" id="2jR-36-lcU" customClass="AccountRecoveryViewController" customModule="MyLoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BJe-qW-dKn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="To remind your password, please enter your email." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4pH-Pz-7Ji">
-                                <rect key="frame" x="16" y="20" width="288" height="50"/>
+                                <rect key="frame" x="20" y="0.0" width="528" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cSY-Qa-7Ri"/>
@@ -28,7 +28,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93E-4z-VsQ">
-                                <rect key="frame" x="148" y="524" width="24" height="24"/>
+                                <rect key="frame" x="272" y="276" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="tGk-xt-SUY"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0kf-lg-7Dj">
-                                <rect key="frame" x="16" y="78" width="288" height="30"/>
+                                <rect key="frame" x="20" y="58" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zEM-zT-tWg"/>
                                 </constraints>
@@ -48,10 +48,10 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar4" translatesAutoresizingMaskIntoConstraints="NO" id="aJV-g1-Tzb">
-                                <rect key="frame" x="16" y="154" width="288" height="362"/>
+                                <rect key="frame" x="20" y="134" width="528" height="134"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAt-8q-tZH">
-                                <rect key="frame" x="16" y="116" width="288" height="30"/>
+                                <rect key="frame" x="20" y="96" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LRk-AE-tn1"/>
                                 </constraints>
@@ -96,11 +96,11 @@
             <objects>
                 <viewController storyboardIdentifier="loginVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="MyLoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BK7-QW-6nV">
-                                <rect key="frame" x="16" y="128" width="288" height="30"/>
+                                <rect key="frame" x="20" y="108" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="STg-zE-S3R"/>
                                 </constraints>
@@ -109,7 +109,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DYN-oz-Huy">
-                                <rect key="frame" x="16" y="166" width="288" height="30"/>
+                                <rect key="frame" x="20" y="146" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RUI-wN-bob"/>
                                 </constraints>
@@ -118,7 +118,7 @@
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVK-97-eFe">
-                                <rect key="frame" x="16" y="204" width="288" height="30"/>
+                                <rect key="frame" x="20" y="184" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gS9-AD-6Jn"/>
                                 </constraints>
@@ -128,27 +128,27 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sugar-Free-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bST-k7-2YH">
-                                <rect key="frame" x="16" y="20" width="288" height="100"/>
+                                <rect key="frame" x="20" y="0.0" width="528" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="IGc-Iv-BxJ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em3-iG-Nea">
-                                <rect key="frame" x="280" y="524" width="24" height="24"/>
+                                <rect key="frame" x="524" y="276" width="24" height="24"/>
                                 <state key="normal" image="information"/>
                                 <connections>
                                     <action selector="accountRecoveryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jTA-Ji-AcI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yT4-LQ-ic0">
-                                <rect key="frame" x="16" y="524" width="24" height="24"/>
+                                <rect key="frame" x="20" y="276" width="24" height="24"/>
                                 <state key="normal" image="create-new-pencil-button"/>
                                 <connections>
                                     <action selector="registerViewControllerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdi-gC-h4c"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar2" translatesAutoresizingMaskIntoConstraints="NO" id="TBL-6V-vtq">
-                                <rect key="frame" x="16" y="242" width="288" height="274"/>
+                                <rect key="frame" x="20" y="222" width="528" height="46"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -192,21 +192,27 @@
             <objects>
                 <viewController storyboardIdentifier="homeVC" id="HtH-UC-guT" customClass="HomeViewController" customModule="MyLoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Svu-tE-eAn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdd-Dz-gNi">
-                                <rect key="frame" x="148" y="272" width="24" height="24"/>
+                                <rect key="frame" x="272" y="148" width="24" height="24"/>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
                                     <action selector="backButton:" destination="HtH-UC-guT" eventType="touchUpInside" id="DG8-4X-zhR"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar" translatesAutoresizingMaskIntoConstraints="NO" id="6VH-ws-lXj">
-                                <rect key="frame" x="16" y="304" width="288" height="244"/>
+                                <rect key="frame" x="20" y="180" width="528" height="120"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success login!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhJ-KS-Hbh">
-                                <rect key="frame" x="16" y="75" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhJ-KS-Hbh">
+                                <rect key="frame" x="20" y="55" width="528" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boN-80-c5E">
+                                <rect key="frame" x="20" y="84" width="528" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -215,15 +221,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FhJ-KS-Hbh" firstAttribute="centerX" secondItem="Bdd-Dz-gNi" secondAttribute="centerX" id="0mQ-aZ-6X2"/>
+                            <constraint firstItem="boN-80-c5E" firstAttribute="trailing" secondItem="FhJ-KS-Hbh" secondAttribute="trailing" id="8pc-FO-Ksi"/>
                             <constraint firstItem="6VH-ws-lXj" firstAttribute="trailing" secondItem="Svu-tE-eAn" secondAttribute="trailingMargin" id="8sb-Gv-zDs"/>
                             <constraint firstAttribute="bottom" secondItem="6VH-ws-lXj" secondAttribute="bottom" constant="20" symbolic="YES" id="Fn9-Df-z4o"/>
                             <constraint firstItem="Bdd-Dz-gNi" firstAttribute="centerY" secondItem="Svu-tE-eAn" secondAttribute="centerY" id="Hu3-0x-mgE"/>
+                            <constraint firstItem="boN-80-c5E" firstAttribute="leading" secondItem="FhJ-KS-Hbh" secondAttribute="leading" id="M8a-vY-jdF"/>
                             <constraint firstItem="FhJ-KS-Hbh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6VH-ws-lXj" secondAttribute="trailing" id="Z0U-Zu-Qru"/>
                             <constraint firstItem="FhJ-KS-Hbh" firstAttribute="top" secondItem="PP9-wQ-Tv9" secondAttribute="top" constant="55" id="aoz-h9-3GX"/>
                             <constraint firstItem="6VH-ws-lXj" firstAttribute="leading" secondItem="FhJ-KS-Hbh" secondAttribute="leading" id="jd5-VU-EUg"/>
                             <constraint firstItem="FhJ-KS-Hbh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Svu-tE-eAn" secondAttribute="leadingMargin" id="mMm-4T-rqp"/>
                             <constraint firstItem="FhJ-KS-Hbh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Svu-tE-eAn" secondAttribute="trailingMargin" id="pBu-L6-SVN"/>
                             <constraint firstItem="6VH-ws-lXj" firstAttribute="top" secondItem="Bdd-Dz-gNi" secondAttribute="bottom" constant="8" symbolic="YES" id="sd6-51-zXm"/>
+                            <constraint firstItem="boN-80-c5E" firstAttribute="top" secondItem="FhJ-KS-Hbh" secondAttribute="bottom" constant="8" symbolic="YES" id="vQX-4J-eRe"/>
                             <constraint firstItem="FhJ-KS-Hbh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6VH-ws-lXj" secondAttribute="leading" id="wtY-f4-qGB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PP9-wQ-Tv9"/>
@@ -239,11 +248,11 @@
             <objects>
                 <viewController storyboardIdentifier="registerVC" id="6Kt-kh-zIo" customClass="RegisterViewController" customModule="MyLoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0pq-Ct-BwJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gXj-bA-EhQ">
-                                <rect key="frame" x="16" y="88" width="288" height="30"/>
+                                <rect key="frame" x="20" y="68" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EE7-lR-ois"/>
                                 </constraints>
@@ -252,7 +261,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WfK-ST-ttO">
-                                <rect key="frame" x="16" y="126" width="288" height="30"/>
+                                <rect key="frame" x="20" y="106" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OJp-eM-f7w"/>
                                 </constraints>
@@ -261,7 +270,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-enter your password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TAW-iC-pt3">
-                                <rect key="frame" x="16" y="164" width="288" height="30"/>
+                                <rect key="frame" x="20" y="144" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8eh-Ez-Hzi"/>
                                 </constraints>
@@ -270,7 +279,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Password need have minimum six characters, at least one letter and one number" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5k-fc-UTE">
-                                <rect key="frame" x="16" y="20" width="288" height="60"/>
+                                <rect key="frame" x="20" y="0.0" width="528" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="B0y-0t-4Rj"/>
@@ -279,7 +288,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4n-2c-V6J">
-                                <rect key="frame" x="148" y="524" width="24" height="24"/>
+                                <rect key="frame" x="272" y="276" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="z5P-xh-dYu"/>
                                 </constraints>
@@ -289,10 +298,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar3" translatesAutoresizingMaskIntoConstraints="NO" id="b54-rW-M9o">
-                                <rect key="frame" x="16" y="242" width="288" height="274"/>
+                                <rect key="frame" x="20" y="222" width="528" height="46"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu7-gh-ZBM">
-                                <rect key="frame" x="16" y="202" width="288" height="32"/>
+                                <rect key="frame" x="20" y="182" width="528" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="v9C-y3-tzG"/>
                                 </constraints>
