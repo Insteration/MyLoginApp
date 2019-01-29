@@ -12,6 +12,7 @@ class AccountRecoveryViewController: UIViewController {
     
     var data = Data()
     var dataMessage = DataMessage()
+    var dataMethods = DataMethods()
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Notifiction", message: messageToDisplay, preferredStyle: .alert)
@@ -44,9 +45,9 @@ class AccountRecoveryViewController: UIViewController {
     
     @IBAction func resetPasswordButton(_ sender: UIButton) {
         
-        if data.emailPasswordCheckOnEmpty(emailTextField.text!) {
-            if data.searchEmailInData(emailTextField.text!) {
-                displayAlertMessage(messageToDisplay: data.outputPasswordFromData(emailTextField.text!))
+        if dataMethods.emailPasswordCheckOnEmpty(emailTextField.text!) {
+            if dataMethods.searchEmailInData(emailTextField.text!) {
+                displayAlertMessage(messageToDisplay: dataMethods.outputPasswordFromData(emailTextField.text!))
             } else {
                 displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
             }
@@ -66,9 +67,9 @@ class AccountRecoveryViewController: UIViewController {
 extension AccountRecoveryViewController: UITextFieldDelegate {
     
     func performAction() {
-        if data.emailPasswordCheckOnEmpty(emailTextField.text!) {
-            if data.searchEmailInData(emailTextField.text!) {
-                displayAlertMessage(messageToDisplay: "Your password is \(data.outputPasswordFromData(emailTextField.text!))")
+        if dataMethods.emailPasswordCheckOnEmpty(emailTextField.text!) {
+            if dataMethods.searchEmailInData(emailTextField.text!) {
+                displayAlertMessage(messageToDisplay: "Your password is \(dataMethods.outputPasswordFromData(emailTextField.text!))")
             } else {
                 displayAlertMessage(messageToDisplay: dataMessage.emailAddressNotFound)
             }
@@ -78,7 +79,7 @@ extension AccountRecoveryViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if data.emailAddressCheck(emailTextField.text!) {
+        if dataMethods.emailAddressCheck(emailTextField.text!) {
             self.emailTextField.layer.borderColor = UIColor.green.cgColor
             self.emailTextField.layer.borderWidth = 2
             self.emailTextField.layer.cornerRadius = 5

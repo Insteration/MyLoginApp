@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9014B4D220067470072CEF9 /* DataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9014B4C220067470072CEF9 /* DataMethods.swift */; };
 		D962373821FB2121008F0B40 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962373721FB2121008F0B40 /* RegisterViewController.swift */; };
 		D962373A21FB2209008F0B40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962373921FB2209008F0B40 /* HomeViewController.swift */; };
 		D962375A21FF123F008F0B40 /* AccountRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962375921FF123F008F0B40 /* AccountRecoveryViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9014B4C220067470072CEF9 /* DataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMethods.swift; sourceTree = "<group>"; };
 		D962373721FB2121008F0B40 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D962373921FB2209008F0B40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D962375921FF123F008F0B40 /* AccountRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRecoveryViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				D9772ADE21F9DD4700FBC0BB /* Data.swift */,
+				D9014B4C220067470072CEF9 /* DataMethods.swift */,
 				D962376621FF2BA5008F0B40 /* DataMessages.swift */,
 			);
 			path = Models;
@@ -192,6 +195,7 @@
 			files = (
 				D962373A21FB2209008F0B40 /* HomeViewController.swift in Sources */,
 				D962376721FF2BA5008F0B40 /* DataMessages.swift in Sources */,
+				D9014B4D220067470072CEF9 /* DataMethods.swift in Sources */,
 				D9772ACF21F9D36B00FBC0BB /* LoginViewController.swift in Sources */,
 				D9772ADF21F9DD4700FBC0BB /* Data.swift in Sources */,
 				D9772ACD21F9D36B00FBC0BB /* AppDelegate.swift in Sources */,

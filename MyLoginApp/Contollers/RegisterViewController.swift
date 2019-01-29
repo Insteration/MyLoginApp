@@ -12,6 +12,8 @@ class RegisterViewController: UIViewController {
     
     var data = Data()
     var dataMessage = DataMessage()
+    var dataMethods = DataMethods()
+
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "Notification", message: messageToDisplay, preferredStyle: .alert)
@@ -31,7 +33,7 @@ class RegisterViewController: UIViewController {
         view.addGestureRecognizer(tap)
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil)
-        {nc in self.view.frame.origin.y = -60}
+        {nc in self.view.frame.origin.y = -45}
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil)
         {nc in self.view.frame.origin.y = 0}
@@ -45,11 +47,11 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButton(_ sender: UIButton) {
         
-        if data.emailAddressCheck(userTextField[0].text!) {
-            if data.passwordCharacterCheck(userTextField[1].text!) {
+        if dataMethods.emailAddressCheck(userTextField[0].text!) {
+            if dataMethods.passwordCharacterCheck(userTextField[1].text!) {
                 if userTextField[1].text == userTextField[2].text {
-                    _ = data.registerAccount(userTextField[0].text!, userTextField[1].text!)
-                    displayAlertMessage(messageToDisplay: dataMessage.createAccountSuccesfull)
+                    _ = dataMethods.registerAccount(userTextField[0].text!, userTextField[1].text!)
+                    
                 } else {
                     displayAlertMessage(messageToDisplay: dataMessage.passwordNotMatch)
                 }
@@ -72,7 +74,7 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if data.emailAddressCheck(userTextField[0].text!) {
+        if dataMethods.emailAddressCheck(userTextField[0].text!) {
             self.userTextField[0].layer.borderColor = UIColor.green.cgColor
             self.userTextField[0].layer.borderWidth = 2
             self.userTextField[0].layer.cornerRadius = 5
@@ -82,7 +84,7 @@ extension RegisterViewController: UITextFieldDelegate {
             self.userTextField[0].layer.cornerRadius = 5
         }
         
-        if data.passwordCharacterCheck(userTextField[1].text!) {
+        if dataMethods.passwordCharacterCheck(userTextField[1].text!) {
             self.userTextField[1].layer.borderColor = UIColor.green.cgColor
             self.userTextField[1].layer.borderWidth = 2
             self.userTextField[1].layer.cornerRadius = 5
@@ -92,7 +94,7 @@ extension RegisterViewController: UITextFieldDelegate {
             self.userTextField[1].layer.cornerRadius = 5
         }
         
-        if data.passwordCharacterCheck(userTextField[2].text!) {
+        if dataMethods.passwordCharacterCheck(userTextField[2].text!) {
             self.userTextField[2].layer.borderColor = UIColor.green.cgColor
             self.userTextField[2].layer.borderWidth = 2
             self.userTextField[2].layer.cornerRadius = 5
